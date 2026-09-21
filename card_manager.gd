@@ -3,6 +3,7 @@ extends Node2D
 
 # -- Constants --
 const COLLISION_MASK_CARD = 1
+const COLLISION_MASK_CARD_SLOT = 2
 
 
 # -- Variables --
@@ -32,7 +33,8 @@ func _input(event):
 			if card:
 				start_drag(card)
 		else:
-			finish_drag()
+			if card_being_dragged:
+				finish_drag()
 
 
 func start_drag(card):
@@ -41,6 +43,12 @@ func start_drag(card):
 
 func finish_drag():
 	card_being_dragged.scale = Vector2(1.05, 1.05)
+	var card_slot_found = raycast_check_for_card_slot()
+	if card_slot_found and not card_slot_found.card_in_slot:
+		# Card dropped in an empty card slot
+		card_being_dragged.position = card_slot_found.position
+		card_being_dragged.get_node("Area2D/CollisionShape2D").disabled = true
+		card_slot_found.card_in_slot = true
 	card_being_dragged = null
 
 
@@ -48,7 +56,6 @@ func finish_drag():
 func connect_card_signals(card):
 	card.connect("hovered", on_hovered_over_card)
 	card.connect("hovered_off", on_hovered_off_card)
-
 
 
 func on_hovered_over_card(card):
@@ -68,7 +75,6 @@ func on_hovered_off_card(card):
 			is_hovering_on_card = false
 
 
-
 # Gives the card hover effect
 func highlight_card(card, hovered):
 	if hovered:
@@ -79,12 +85,26 @@ func highlight_card(card, hovered):
 		card.z_index = 1
 
 
+# Similar to the raycast below but it's checking the collision_mask_card_slot
+func raycast_check_for_card_slot(): 
+	var space_state = get_world_2d().direct_space_state
+	var parameters = PhysicsPointQueryParameters2D.new()
+	parameters.position = get_global_mouse_position()
+	parameters.collide_with_areas = true
+	parameters.collision_mask = COLLISION_MASK_CARD_SLOT
+	var result = space_state.intersect_point(parameters)
+	if result.size() > 0:
+		#return result[0].collider.get_parent()
+		return result[0].collider.get_parent()
+	return null
+
+
 # Raycast setup to return whatever is under our cursor when we click
 func raycast_check_for_card(): 
 	var space_state = get_world_2d().direct_space_state
 	var parameters = PhysicsPointQueryParameters2D.new()
 	parameters.position = get_global_mouse_position()
-	parameters.collide_with_areas = true
+	parameters.collide_with_areas = true 
 	parameters.collision_mask = COLLISION_MASK_CARD
 	var result = space_state.intersect_point(parameters)
 	if result.size() > 0:
