@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://bqodkxqswc5gv"]
 
-[ext_resource type="Texture2D" uid="uid://dn3x58c5cjpfu" path="res://Assets/image.png" id="1_0qqmn"]
+[ext_resource type="Texture2D" uid="uid://dn3x58c5cjpfu" path="res://Assets/KnightCard.png" id="1_0qqmn"]
 [ext_resource type="Script" uid="uid://br834mnw7o63g" path="res://Scenes/card.gd" id="1_wf8id"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cwbch"]
 size = Vector2(180, 265.33334)
 
 [node name="Card" type="Node2D" unique_id=1248595082]
+position = Vector2(150, 890)
 script = ExtResource("1_wf8id")
 
 [node name="CardImage" type="Sprite2D" parent="." unique_id=1300680139]
