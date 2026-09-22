@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://d1phvqegcp27v" path="res://Scripts/card_manager.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://ce5aq5djay6ue" path="res://Scripts/player_hand.gd" id="3_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://cff1f5k3vh4js" path="res://Scenes/card_slot.tscn" id="3_h2yge"]
-[ext_resource type="Script" uid="uid://dasid3n62eoy0" path="res://Scenes/deck.gd" id="4_kry3j"]
+[ext_resource type="Script" uid="uid://dasid3n62eoy0" path="res://Scripts/deck.gd" id="4_kry3j"]
 [ext_resource type="Texture2D" uid="uid://fmjcqe74viuj" path="res://Assets/Deck.png" id="5_21xkr"]
-[ext_resource type="Script" uid="uid://b3snbpx36pgos" path="res://Scenes/input_manager.gd" id="6_21xkr"]
+[ext_resource type="Script" uid="uid://b3snbpx36pgos" path="res://Scripts/input_manager.gd" id="6_21xkr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cwbch"]
 size = Vector2(180, 266)

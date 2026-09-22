@@ -36,7 +36,7 @@ func calculate_card_position(index):
 	var x_offset = center_screen_x + index * CARD_WIDTH - total_width / 2
 	return x_offset
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func animate_card_to_position(card, new_position, speed):
 	var tween = get_tree().create_tween()
 	tween.tween_property(card, "position", new_position, speed)

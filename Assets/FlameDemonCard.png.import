@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bblpyf28aeq7j"
-path="res://.godot/imported/Deck.png-632a28ac441658e75e564c7c9aec9451.ctex"
+uid="uid://c2ynsyhagam57"
+path="res://.godot/imported/FlameDemonCard.png-a579325dc9894adce31176ec1ffde4df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scripts/Deck.png"
-dest_files=["res://.godot/imported/Deck.png-632a28ac441658e75e564c7c9aec9451.ctex"]
+source_file="res://Assets/FlameDemonCard.png"
+dest_files=["res://.godot/imported/FlameDemonCard.png-a579325dc9894adce31176ec1ffde4df.ctex"]
 
 [params]
 
