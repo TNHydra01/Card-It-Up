@@ -1,9 +1,11 @@
 extends Node2D
 
+
 # -- Constants --
 const CARD_WIDTH = 160
 const HAND_Y_POSITION = 955
 const DEFAULT_CARD_MOVE_SPEED = 0.1
+
 
 # -- Variables --
 var player_hand = []
@@ -31,6 +33,7 @@ func update_hand_positions(speed):
 		card.starting_position = new_position
 		animate_card_to_position(card, new_position, speed)
 
+
 func calculate_card_position(index):
 	var total_width = (player_hand.size() -1) * CARD_WIDTH
 	var x_offset = center_screen_x + index * CARD_WIDTH - total_width / 2
@@ -40,6 +43,7 @@ func calculate_card_position(index):
 func animate_card_to_position(card, new_position, speed):
 	var tween = get_tree().create_tween()
 	tween.tween_property(card, "position", new_position, speed)
+
 
 func remove_card_from_hand(card):
 	if card in player_hand:

@@ -9,6 +9,7 @@ const DEFAULT_CARD_SCALE = 0.8
 const CARD_BIGGER_SCALE = 0.85
 const CARD_SMALLER_SCALE = 0.6
 
+
 # -- Variables --
 var screen_size
 var card_being_dragged
@@ -36,6 +37,7 @@ func start_drag(card):
 	card_being_dragged = card
 	card.scale = Vector2(DEFAULT_CARD_SCALE, DEFAULT_CARD_SCALE)
 
+
 func finish_drag():
 	card_being_dragged.scale = Vector2(CARD_BIGGER_SCALE, CARD_BIGGER_SCALE)
 	var card_slot_found = raycast_check_for_card_slot()
@@ -56,7 +58,6 @@ func finish_drag():
 				return
 	player_hand_reference.add_card_to_hand(card_being_dragged, DEFAULT_CARD_MOVE_SPEED)
 	card_being_dragged = null
-
 
 
 func connect_card_signals(card):
@@ -125,6 +126,7 @@ func raycast_check_for_card():
 		return get_card_with_highest_z_index(result)
 	return null
 
+
 # Finding which card has the highest z index
 func get_card_with_highest_z_index(cards):
 	# Assume the first card in cards array has the highest z index
@@ -138,3 +140,7 @@ func get_card_with_highest_z_index(cards):
 			highest_z_card = current_card
 			highest_z_index = current_card.z_index
 	return highest_z_card
+
+
+func reset_played_monster():
+	played_monster_card_this_turn = false

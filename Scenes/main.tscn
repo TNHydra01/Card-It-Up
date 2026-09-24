@@ -4,10 +4,13 @@
 [ext_resource type="Script" uid="uid://ce5aq5djay6ue" path="res://Scripts/player_hand.gd" id="3_1bvp3"]
 [ext_resource type="Script" uid="uid://cme7r5587nh5p" path="res://Scripts/magic_cardslot.gd" id="3_6bp64"]
 [ext_resource type="PackedScene" uid="uid://cff1f5k3vh4js" path="res://Scenes/cardslot.tscn" id="3_h2yge"]
-[ext_resource type="PackedScene" uid="uid://ck5sm8pk1xjhx" path="res://Scenes/enemy_cardslot.tscn" id="4_344ge"]
+[ext_resource type="PackedScene" uid="uid://ck5sm8pk1xjhx" path="res://Scenes/opponent_cardslot.tscn" id="4_344ge"]
 [ext_resource type="Script" uid="uid://dasid3n62eoy0" path="res://Scripts/deck.gd" id="4_kry3j"]
 [ext_resource type="Texture2D" uid="uid://fmjcqe74viuj" path="res://Assets/Deck.png" id="5_21xkr"]
 [ext_resource type="Script" uid="uid://b3snbpx36pgos" path="res://Scripts/input_manager.gd" id="6_21xkr"]
+[ext_resource type="Script" uid="uid://8mds1k66jcnt" path="res://Scripts/opponent_hand.gd" id="6_d1ilt"]
+[ext_resource type="Script" uid="uid://dphay4tdcbd4b" path="res://Scripts/opponent_deck.gd" id="10_6iyac"]
+[ext_resource type="Script" uid="uid://0vgtc22amalu" path="res://Scripts/battle_manager.gd" id="11_fdnlq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cwbch"]
 size = Vector2(180, 266)
@@ -117,6 +120,9 @@ scale = Vector2(0.6, 0.6)
 [node name="PlayerHand" type="Node2D" parent="." unique_id=1752709561]
 script = ExtResource("3_1bvp3")
 
+[node name="OpponentHand" type="Node2D" parent="." unique_id=1208654233]
+script = ExtResource("6_d1ilt")
+
 [node name="Deck" type="Node2D" parent="." unique_id=1009127623]
 position = Vector2(140, 955)
 scale = Vector2(0.8, 0.8)
@@ -154,16 +160,15 @@ offset_bottom = 601.0
 text = "End Turn"
 
 [node name="OpponentDeck" type="Node2D" parent="." unique_id=337585706]
-
-[node name="Deck" type="Node2D" parent="OpponentDeck" unique_id=297763694]
 position = Vector2(1780, 125)
-scale = Vector2(0.8, 0.8)
+script = ExtResource("10_6iyac")
 
-[node name="Sprite2D" type="Sprite2D" parent="OpponentDeck/Deck" unique_id=591315607]
+[node name="Sprite2D" type="Sprite2D" parent="OpponentDeck" unique_id=1917648525]
 z_index = -2
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("5_21xkr")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="OpponentDeck/Deck" unique_id=144933395]
+[node name="RichTextLabel" type="RichTextLabel" parent="OpponentDeck" unique_id=2030631866]
 modulate = Color(0, 0, 0, 1)
 z_index = -2
 offset_left = -9.0
@@ -171,4 +176,11 @@ offset_top = -24.0
 offset_right = 31.0
 offset_bottom = 16.0
 scale = Vector2(2, 2)
-text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="BattleManager" type="Node" parent="." unique_id=811712707]
+script = ExtResource("11_fdnlq")
+
+[node name="BattleTimer" type="Timer" parent="." unique_id=225093225]
+
+[connection signal="pressed" from="EndTurnButton" to="BattleManager" method="_on_end_turn_button_pressed"]

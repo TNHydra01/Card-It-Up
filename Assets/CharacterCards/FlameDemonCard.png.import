@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2ynsyhagam57"
-path="res://.godot/imported/FlameDemonCard.png-a579325dc9894adce31176ec1ffde4df.ctex"
+path="res://.godot/imported/FlameDemonCard.png-09784c9e77672629168e3511d164e5fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FlameDemonCard.png"
-dest_files=["res://.godot/imported/FlameDemonCard.png-a579325dc9894adce31176ec1ffde4df.ctex"]
+source_file="res://Assets/CharacterCards/FlameDemonCard.png"
+dest_files=["res://.godot/imported/FlameDemonCard.png-09784c9e77672629168e3511d164e5fc.ctex"]
 
 [params]
 
