@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://d1phvqegcp27v" path="res://Scripts/card_manager.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://ce5aq5djay6ue" path="res://Scripts/player_hand.gd" id="3_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://cff1f5k3vh4js" path="res://Scenes/card_slot.tscn" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://cme7r5587nh5p" path="res://Scripts/magic_cardslot.gd" id="3_6bp64"]
+[ext_resource type="PackedScene" uid="uid://cff1f5k3vh4js" path="res://Scenes/cardslot.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://ck5sm8pk1xjhx" path="res://Scenes/enemy_cardslot.tscn" id="4_344ge"]
 [ext_resource type="Script" uid="uid://dasid3n62eoy0" path="res://Scripts/deck.gd" id="4_kry3j"]
 [ext_resource type="Texture2D" uid="uid://fmjcqe74viuj" path="res://Assets/Deck.png" id="5_21xkr"]
 [ext_resource type="Script" uid="uid://b3snbpx36pgos" path="res://Scripts/input_manager.gd" id="6_21xkr"]
@@ -15,17 +17,109 @@ size = Vector2(180, 266)
 [node name="CardManager" type="Node2D" parent="." unique_id=1842617355]
 script = ExtResource("1_0xm2m")
 
-[node name="CardSlot" parent="." unique_id=24172092 instance=ExtResource("3_h2yge")]
-position = Vector2(159, 141)
+[node name="CardSlots" type="Node2D" parent="." unique_id=1360367491]
 
-[node name="CardSlot2" parent="." unique_id=824569768 instance=ExtResource("3_h2yge")]
-position = Vector2(538, 283)
+[node name="CardSlot" parent="CardSlots" unique_id=24172092 instance=ExtResource("3_h2yge")]
+z_index = -3
+position = Vector2(960, 750)
+scale = Vector2(0.6, 0.6)
+script = ExtResource("3_6bp64")
+
+[node name="CardSlot2" parent="CardSlots" unique_id=824569768 instance=ExtResource("3_h2yge")]
+z_index = -3
+position = Vector2(820, 750)
+scale = Vector2(0.6, 0.6)
+script = ExtResource("3_6bp64")
+
+[node name="CardSlot3" parent="CardSlots" unique_id=1031318421 instance=ExtResource("3_h2yge")]
+z_index = -3
+position = Vector2(680, 750)
+scale = Vector2(0.6, 0.6)
+script = ExtResource("3_6bp64")
+
+[node name="CardSlot4" parent="CardSlots" unique_id=1666236511 instance=ExtResource("3_h2yge")]
+z_index = -3
+position = Vector2(1100, 750)
+scale = Vector2(0.6, 0.6)
+script = ExtResource("3_6bp64")
+
+[node name="CardSlot5" parent="CardSlots" unique_id=949526039 instance=ExtResource("3_h2yge")]
+z_index = -3
+position = Vector2(1240, 750)
+scale = Vector2(0.6, 0.6)
+script = ExtResource("3_6bp64")
+
+[node name="CardSlot6" parent="CardSlots" unique_id=1986443134 instance=ExtResource("3_h2yge")]
+z_index = -3
+position = Vector2(960, 570)
+scale = Vector2(0.6, 0.6)
+
+[node name="CardSlot7" parent="CardSlots" unique_id=1027618335 instance=ExtResource("3_h2yge")]
+z_index = -3
+position = Vector2(820, 570)
+scale = Vector2(0.6, 0.6)
+
+[node name="CardSlot8" parent="CardSlots" unique_id=795876056 instance=ExtResource("3_h2yge")]
+z_index = -3
+position = Vector2(680, 570)
+scale = Vector2(0.6, 0.6)
+
+[node name="CardSlot9" parent="CardSlots" unique_id=1587318478 instance=ExtResource("3_h2yge")]
+z_index = -3
+position = Vector2(1100, 570)
+scale = Vector2(0.6, 0.6)
+
+[node name="CardSlot10" parent="CardSlots" unique_id=339352356 instance=ExtResource("3_h2yge")]
+z_index = -3
+position = Vector2(1240, 570)
+scale = Vector2(0.6, 0.6)
+
+[node name="EnemyCardSlot" parent="CardSlots" unique_id=1991395847 instance=ExtResource("4_344ge")]
+position = Vector2(960, 360)
+scale = Vector2(0.6, 0.6)
+
+[node name="EnemyCardSlot2" parent="CardSlots" unique_id=2051036019 instance=ExtResource("4_344ge")]
+position = Vector2(820, 360)
+scale = Vector2(0.6, 0.6)
+
+[node name="EnemyCardSlot3" parent="CardSlots" unique_id=1143631247 instance=ExtResource("4_344ge")]
+position = Vector2(680, 360)
+scale = Vector2(0.6, 0.6)
+
+[node name="EnemyCardSlot4" parent="CardSlots" unique_id=1203261362 instance=ExtResource("4_344ge")]
+position = Vector2(1100, 360)
+scale = Vector2(0.6, 0.6)
+
+[node name="EnemyCardSlot5" parent="CardSlots" unique_id=890981342 instance=ExtResource("4_344ge")]
+position = Vector2(1240, 360)
+scale = Vector2(0.6, 0.6)
+
+[node name="EnemyCardSlot6" parent="CardSlots" unique_id=383394044 instance=ExtResource("4_344ge")]
+position = Vector2(960, 180)
+scale = Vector2(0.6, 0.6)
+
+[node name="EnemyCardSlot7" parent="CardSlots" unique_id=1376426377 instance=ExtResource("4_344ge")]
+position = Vector2(820, 180)
+scale = Vector2(0.6, 0.6)
+
+[node name="EnemyCardSlot8" parent="CardSlots" unique_id=859158433 instance=ExtResource("4_344ge")]
+position = Vector2(680, 180)
+scale = Vector2(0.6, 0.6)
+
+[node name="EnemyCardSlot9" parent="CardSlots" unique_id=854540455 instance=ExtResource("4_344ge")]
+position = Vector2(1100, 180)
+scale = Vector2(0.6, 0.6)
+
+[node name="EnemyCardSlot10" parent="CardSlots" unique_id=625795977 instance=ExtResource("4_344ge")]
+position = Vector2(1240, 180)
+scale = Vector2(0.6, 0.6)
 
 [node name="PlayerHand" type="Node2D" parent="." unique_id=1752709561]
 script = ExtResource("3_1bvp3")
 
 [node name="Deck" type="Node2D" parent="." unique_id=1009127623]
-position = Vector2(150, 890)
+position = Vector2(140, 955)
+scale = Vector2(0.8, 0.8)
 script = ExtResource("4_kry3j")
 
 [node name="Sprite2D" type="Sprite2D" parent="Deck" unique_id=865211292]
@@ -51,3 +145,30 @@ text = "0"
 
 [node name="InputManager" type="Node2D" parent="." unique_id=710476070]
 script = ExtResource("6_21xkr")
+
+[node name="EndTurnButton" type="Button" parent="." unique_id=631740194]
+offset_left = 300.0
+offset_top = 570.0
+offset_right = 378.0
+offset_bottom = 601.0
+text = "End Turn"
+
+[node name="OpponentDeck" type="Node2D" parent="." unique_id=337585706]
+
+[node name="Deck" type="Node2D" parent="OpponentDeck" unique_id=297763694]
+position = Vector2(1780, 125)
+scale = Vector2(0.8, 0.8)
+
+[node name="Sprite2D" type="Sprite2D" parent="OpponentDeck/Deck" unique_id=591315607]
+z_index = -2
+texture = ExtResource("5_21xkr")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="OpponentDeck/Deck" unique_id=144933395]
+modulate = Color(0, 0, 0, 1)
+z_index = -2
+offset_left = -9.0
+offset_top = -24.0
+offset_right = 31.0
+offset_bottom = 16.0
+scale = Vector2(2, 2)
+text = "0"

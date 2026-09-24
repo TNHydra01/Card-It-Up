@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ck5sm8pk1xjhx"]
+
+[ext_resource type="Script" uid="uid://c0ph68df2l4ih" path="res://Scripts/monster_cardslot.gd" id="1_3wu73"]
+[ext_resource type="Texture2D" uid="uid://7eojvpawl104" path="res://Assets/CardSlot.png" id="2_aducj"]
+
+[node name="CardSlot" type="Node2D" unique_id=24172092]
+script = ExtResource("1_3wu73")
+
+[node name="CardSlotImage" type="Sprite2D" parent="." unique_id=1460092922]
+texture_filter = 1
+position = Vector2(1.1920929e-07, -2.3841858e-07)
+texture = ExtResource("2_aducj")

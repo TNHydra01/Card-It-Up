@@ -1,8 +1,8 @@
 extends Node2D
 
 # -- Constants --
-const CARD_WIDTH = 200
-const HAND_Y_POSITION = 890
+const CARD_WIDTH = 160
+const HAND_Y_POSITION = 955
 const DEFAULT_CARD_MOVE_SPEED = 0.1
 
 # -- Variables --
