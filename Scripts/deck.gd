@@ -8,7 +8,7 @@ const STARTING_HAND_SIZE = 5
 
 
 # -- Variables --
-var player_deck = ["Knight", "Archer", "FlameDemon", "Knight", "Knight", "Knight", "Knight" , "Knight"]
+var player_deck = ["Knight", "Archer", "FlameDemon", "Wizard", "Knight", "Mushroom", "Archer" , "FlameDemon"]
 var card_database_reference
 var drawn_card_this_turn = false
 

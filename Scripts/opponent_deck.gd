@@ -8,7 +8,7 @@ const STARTING_HAND_SIZE = 5
 
 
 # -- Variables --
-var opponent_deck = ["Knight", "Archer", "FlameDemon", "Knight", "Knight", "Knight", "Knight" , "Knight"]
+var opponent_deck = ["Knight", "Archer", "FlameDemon", "Wizard", "Knight", "Mushroom", "Archer" , "FlameDemon"]
 var card_database_reference
 
 
